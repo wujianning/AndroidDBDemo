@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,GreenDaoActivity.class);
+                startActivity(intent);
             }
         });
 
