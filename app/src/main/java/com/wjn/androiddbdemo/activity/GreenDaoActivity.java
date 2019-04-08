@@ -127,7 +127,7 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
         UserInfo userInfo=new UserInfo();
         userInfo.setId(id);
         userInfo.setName("张三更新");
-        userInfo.setAge("29");
+        userInfo.setAge("30");
         UserInfoDao userInfoDao= MyApplication.getDaoInstant().getUserInfoDao();
         userInfoDao.update(userInfo);
     }
