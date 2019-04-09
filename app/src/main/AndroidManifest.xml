@@ -20,6 +20,7 @@
         <activity android:name=".activity.AsyncTaskSQLiteActivity"></activity>
         <activity android:name=".activity.ExistsSQLiteActivity"></activity>
         <activity android:name=".activity.GreenDaoActivity"></activity>
+        <activity android:name=".activity.GreenDaoCacheActivity"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

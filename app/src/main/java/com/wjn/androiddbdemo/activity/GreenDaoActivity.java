@@ -7,17 +7,13 @@ import android.widget.TextView;
 
 import com.wjn.androiddbdemo.MyApplication;
 import com.wjn.androiddbdemo.R;
-import com.wjn.androiddbdemo.bean.Person;
-import com.wjn.androiddbdemo.greendao.People;
-import com.wjn.androiddbdemo.greendao.PeopleDao;
 import com.wjn.androiddbdemo.greendao.UserInfo;
 import com.wjn.androiddbdemo.greendao.UserInfoDao;
-import com.wjn.androiddbdemo.utils.db.DBCheckAsyncTask;
-import com.wjn.androiddbdemo.utils.db.DBSQLiteOpenHelper;
 import com.wjn.androiddbdemo.utils.ui.StatusBarUtil;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GreenDaoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -99,11 +95,29 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
 
     public void insertUser() {
         UserInfo userInfo=new UserInfo();
-        userInfo.setId(id);
         userInfo.setName("张三");
         userInfo.setAge("29");
+
+        UserInfo userInfo1=new UserInfo();
+        userInfo1.setName("李四");
+        userInfo1.setAge("39");
+
+        UserInfo userInfo2=new UserInfo();
+        userInfo2.setName("旺旺");
+        userInfo2.setAge("19");
+
+        UserInfo userInfo3=new UserInfo();
+        userInfo3.setName("王伟");
+        userInfo3.setAge("59");
+
+        List<UserInfo> list=new ArrayList<>();
+        list.add(userInfo);
+        list.add(userInfo1);
+        list.add(userInfo2);
+        list.add(userInfo3);
+
         UserInfoDao userInfoDao= MyApplication.getDaoInstant().getUserInfoDao();
-        userInfoDao.insert(userInfo);
+        userInfoDao.insertInTx(list);
     }
 
     /**
@@ -112,7 +126,6 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
 
     public void deleteUser() {
         UserInfo userInfo=new UserInfo();
-        userInfo.setId(id);
         userInfo.setName("张三");
         userInfo.setAge("29");
         UserInfoDao userInfoDao= MyApplication.getDaoInstant().getUserInfoDao();
@@ -133,7 +146,7 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     /**
-     * 查询数据列表
+     * 查询数据列表 姓名=“张三”
      */
 
     public List<UserInfo> queryUserList() {

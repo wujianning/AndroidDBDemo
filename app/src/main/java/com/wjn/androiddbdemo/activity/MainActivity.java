@@ -46,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TextView textView3=findViewById(R.id.activity_main_textview3);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,GreenDaoCacheActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
