@@ -42,6 +42,16 @@
                 android:text="AsyncTask封装"
                 android:textColor="#FFFFFF" />
 
+            <TextView
+                android:id="@+id/activity_sqlite_textview3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="SQLite数据库升级"
+                android:textColor="#FFFFFF" />
+
         </LinearLayout>
 
     </ScrollView>

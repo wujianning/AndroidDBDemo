@@ -20,7 +20,8 @@ public class SQLiteHelp extends SQLiteOpenHelper {
     }
 
     /**
-     * onCreate方法,第一次创建时调用---->建表
+     * onCreate方法
+     * 首次使用软件时生成数据库表
      * */
 
     @Override
@@ -30,7 +31,9 @@ public class SQLiteHelp extends SQLiteOpenHelper {
     }
 
     /**
-     * onUpgrade方法,更新数据库版本时调用---->删除原来的表,重新执行onCreate方法
+     * onUpgrade方法
+     * 在数据库的版本发生变化时会被调用， 一般在软件升级时才需改变版本号
+     * 将老表的数据复制到新表
      * */
 
     @Override
@@ -43,6 +46,7 @@ public class SQLiteHelp extends SQLiteOpenHelper {
         String sql3="INSERT INTO User SELECT id,name,\"这是描述\" FROM _temp_User";
         //删除临时表
         String sql4="DROP TABLE _temp_User";
+        //执行SQL语句
         db.execSQL(sql1);
         db.execSQL(sql2);
         db.execSQL(sql3);

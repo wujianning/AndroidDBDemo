@@ -32,6 +32,7 @@ public class DBSQLiteOpenHelper extends SQLiteOpenHelper {
     /**
      * onUpgrade方法
      * 在数据库的版本发生变化时会被调用， 一般在软件升级时才需改变版本号
+     * 删除原来的表,重新执行onCreate方法
      * */
 
     @Override
