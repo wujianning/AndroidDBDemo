@@ -1,4 +1,4 @@
-package com.wjn.androiddbdemo.activity;
+package com.wjn.androiddbdemo.activity.sqlite;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -40,15 +40,6 @@ public class SQLiteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(SQLiteActivity.this,AsyncTaskSQLiteActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        TextView textView3=findViewById(R.id.activity_sqlite_textview3);
-        textView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(SQLiteActivity.this,ExistsSQLiteActivity.class);
                 startActivity(intent);
             }
         });

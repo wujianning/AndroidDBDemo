@@ -1,4 +1,4 @@
-package com.wjn.androiddbdemo.activity;
+package com.wjn.androiddbdemo.activity.sqlite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -58,7 +58,7 @@ public class SimpleSQLiteActivity extends AppCompatActivity implements View.OnCl
         textView6.setOnClickListener(this);
         textView7.setOnClickListener(this);
         textView8.setOnClickListener(this);
-        dbHelp = new SQLiteHelp(this, "Test.db", null, 2);
+        dbHelp = new SQLiteHelp(this, "Test.db", null, 1);
     }
 
     /**
@@ -170,9 +170,7 @@ public class SimpleSQLiteActivity extends AppCompatActivity implements View.OnCl
             int id = cursor.getInt(cursor.getColumnIndex("id"));
             sb.append("ID:" + id + "\n");
             String name = cursor.getString(cursor.getColumnIndex("name"));
-            sb.append("姓名:" + name + "\n");
-            String describe = cursor.getString(cursor.getColumnIndex("describe"));
-            sb.append("描述:" + describe + "\n\n");
+            sb.append("姓名:" + name + "\n\n");
             cursor.moveToNext();
         }
         textView.setText(sb.toString());

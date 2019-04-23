@@ -52,6 +52,16 @@
                 android:text="greenDAO数据库缓存"
                 android:textColor="#FFFFFF" />
 
+            <TextView
+                android:id="@+id/activity_main_textview4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="greenDAO数据库升级"
+                android:textColor="#FFFFFF" />
+
         </LinearLayout>
 
     </ScrollView>

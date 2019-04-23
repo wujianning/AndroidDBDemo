@@ -1,4 +1,4 @@
-package com.wjn.androiddbdemo.activity;
+package com.wjn.androiddbdemo.activity.sqlite;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;

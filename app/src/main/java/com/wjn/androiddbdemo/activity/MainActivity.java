@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.wjn.androiddbdemo.R;
+import com.wjn.androiddbdemo.activity.sqlite.SQLiteActivity;
 import com.wjn.androiddbdemo.utils.ui.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,SQLiteActivity.class);
+                Intent intent=new Intent(MainActivity.this, SQLiteActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,GreenDaoCacheActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView textView4=findViewById(R.id.activity_main_textview4);
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,GreenDaoUpdateActivity.class);
                 startActivity(intent);
             }
         });
