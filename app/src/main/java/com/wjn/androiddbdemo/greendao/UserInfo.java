@@ -11,11 +11,13 @@ public class UserInfo {
     private Long id;//主键 Long型，可以通过@Id(autoincrement = true)设置自增长
     private String name;
     private String age;
-    @Generated(hash = 752529704)
-    public UserInfo(Long id, String name, String age) {
+    private String githubdes;
+    @Generated(hash = 466573838)
+    public UserInfo(Long id, String name, String age, String githubdes) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.githubdes = githubdes;
     }
     @Generated(hash = 1279772520)
     public UserInfo() {
@@ -38,5 +40,12 @@ public class UserInfo {
     public void setAge(String age) {
         this.age = age;
     }
-
+    public String getGithubdes() {
+        return this.githubdes;
+    }
+    public void setGithubdes(String githubdes) {
+        this.githubdes = githubdes;
+    }
+    
+    
 }

@@ -19,9 +19,9 @@
         <activity android:name=".activity.sqlite.SQLiteActivity" />
         <activity android:name=".activity.sqlite.AsyncTaskSQLiteActivity"/>
         <activity android:name=".activity.sqlite.SQLiteUpdateActivity"/>
-        <activity android:name=".activity.GreenDaoActivity"/>
-        <activity android:name=".activity.GreenDaoCacheActivity"/>
-        <activity android:name=".activity.GreenDaoUpdateActivity"/>
+        <activity android:name=".activity.greendao.GreenDaoActivity"/>
+        <activity android:name=".activity.greendao.GreenDaoComplexActivity"/>
+        <activity android:name=".activity.greendao.GreenDaoUpdateActivity"/>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

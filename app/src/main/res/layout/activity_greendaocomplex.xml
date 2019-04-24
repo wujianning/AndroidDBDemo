@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:text="1.查"
+            android:text="插入多条数据"
             android:textColor="#FFFFFF" />
 
 

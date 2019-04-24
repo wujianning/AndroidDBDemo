@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.wjn.androiddbdemo.R;
+import com.wjn.androiddbdemo.activity.greendao.GreenDaoActivity;
+import com.wjn.androiddbdemo.activity.greendao.GreenDaoComplexActivity;
+import com.wjn.androiddbdemo.activity.greendao.GreenDaoUpdateActivity;
 import com.wjn.androiddbdemo.activity.sqlite.SQLiteActivity;
 import com.wjn.androiddbdemo.utils.ui.StatusBarUtil;
 
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,GreenDaoActivity.class);
+                Intent intent=new Intent(MainActivity.this, GreenDaoActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,GreenDaoCacheActivity.class);
+                Intent intent=new Intent(MainActivity.this, GreenDaoComplexActivity.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,GreenDaoUpdateActivity.class);
+                Intent intent=new Intent(MainActivity.this, GreenDaoUpdateActivity.class);
                 startActivity(intent);
             }
         });

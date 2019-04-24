@@ -25,6 +25,7 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Name = new Property(1, String.class, "name", false, "NAME");
         public final static Property Age = new Property(2, String.class, "age", false, "AGE");
+        public final static Property Githubdes = new Property(3, String.class, "githubdes", false, "GITHUBDES");
     }
 
 
@@ -42,7 +43,8 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         db.execSQL("CREATE TABLE " + constraint + "\"USER_INFO\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"NAME\" TEXT," + // 1: name
-                "\"AGE\" TEXT);"); // 2: age
+                "\"AGE\" TEXT," + // 2: age
+                "\"GITHUBDES\" TEXT);"); // 3: githubdes
     }
 
     /** Drops the underlying database table. */
@@ -69,6 +71,11 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         if (age != null) {
             stmt.bindString(3, age);
         }
+ 
+        String githubdes = entity.getGithubdes();
+        if (githubdes != null) {
+            stmt.bindString(4, githubdes);
+        }
     }
 
     @Override
@@ -89,6 +96,11 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         if (age != null) {
             stmt.bindString(3, age);
         }
+ 
+        String githubdes = entity.getGithubdes();
+        if (githubdes != null) {
+            stmt.bindString(4, githubdes);
+        }
     }
 
     @Override
@@ -101,7 +113,8 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         UserInfo entity = new UserInfo( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2) // age
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // age
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3) // githubdes
         );
         return entity;
     }
@@ -111,6 +124,7 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setAge(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setGithubdes(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
      }
     
     @Override

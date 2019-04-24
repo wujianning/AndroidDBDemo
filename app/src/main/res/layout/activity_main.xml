@@ -39,7 +39,7 @@
                 android:layout_margin="10dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="greenDAO数据库增删改查"
+                android:text="greenDAO数据库简单增删改查"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_margin="10dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="greenDAO数据库缓存"
+                android:text="greenDAO数据库复杂增删改查"
                 android:textColor="#FFFFFF" />
 
             <TextView

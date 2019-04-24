@@ -1,4 +1,4 @@
-package com.wjn.androiddbdemo.activity;
+package com.wjn.androiddbdemo.activity.greendao;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -78,9 +78,11 @@ public class GreenDaoUpdateActivity extends AppCompatActivity implements View.On
                     Long id=userInfo.getId();
                     String name=userInfo.getName();
                     String age=userInfo.getAge();
+                    String describe=userInfo.getGithubdes();
                     sbBuilders.append("ID:" + id + "\n");
-                    sbBuilders.append("姓名:" + name + "\n\n");
-                    sbBuilders.append("年龄:" + age + "\n\n");
+                    sbBuilders.append("姓名:" + name + "\n");
+                    sbBuilders.append("年龄:" + age + "\n");
+                    sbBuilders.append("GitHub描述:" + describe + "\n\n");
                 }
                 textView.setText(sbBuilders.toString());
                 break;

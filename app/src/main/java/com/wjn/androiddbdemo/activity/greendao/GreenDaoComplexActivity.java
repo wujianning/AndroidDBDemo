@@ -1,4 +1,4 @@
-package com.wjn.androiddbdemo.activity;
+package com.wjn.androiddbdemo.activity.greendao;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.wjn.androiddbdemo.MyApplication;
 import com.wjn.androiddbdemo.R;
-import com.wjn.androiddbdemo.greendao.DaoSession;
 import com.wjn.androiddbdemo.greendao.UserInfo;
 import com.wjn.androiddbdemo.greendao.UserInfoDao;
 import com.wjn.androiddbdemo.utils.ui.StatusBarUtil;
@@ -17,7 +16,7 @@ import org.greenrobot.greendao.query.QueryBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GreenDaoCacheActivity extends AppCompatActivity implements View.OnClickListener {
+public class GreenDaoComplexActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textView1;
     private TextView textView2;
@@ -31,7 +30,7 @@ public class GreenDaoCacheActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_greendaocache);
+        setContentView(R.layout.activity_greendaocomplex);
         initView();
     }
 
@@ -65,24 +64,13 @@ public class GreenDaoCacheActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.activity_greendaocache_textview1://1.查
-                userInfo=queryUserList();
-                String result="ID："+userInfo.getId()+"  姓名："+userInfo.getName()+"  "+"年龄："+userInfo.getAge();
-                textView.setText(result);
+
                 break;
             case R.id.activity_greendaocache_textview2://2.改
-                if(null!=userInfo){
-                    //修改
-                    userInfo.setAge("1111");
-                    userInfo.setName("张三");
-                    //将修改的内容更新到数据库
-                    UserInfoDao userInfoDao=MyApplication.getDaoInstant().getUserInfoDao();
-                    userInfoDao.update(userInfo);
-                }
+
                 break;
             case R.id.activity_greendaocache_textview3://3.查
-                UserInfo userInfo=queryUserList();
-                String results="ID(新)："+userInfo.getId()+"  姓名(新)："+userInfo.getName()+"  "+"年龄(新)："+userInfo.getAge();
-                textView.setText(results);
+
                 break;
             case R.id.activity_greendaocache_textview11://1.查(清缓存)
 
@@ -98,15 +86,5 @@ public class GreenDaoCacheActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    /**
-     * 查询一条数据列表 姓名=“张三”
-     */
-
-    public UserInfo queryUserList() {
-        UserInfoDao userInfoDao= MyApplication.getDaoInstant().getUserInfoDao();
-        QueryBuilder<UserInfo> qb = userInfoDao.queryBuilder();
-        UserInfo userInfo = qb.where(UserInfoDao.Properties.Name.eq("张三")).unique();
-        return userInfo;
-    }
 
 }
